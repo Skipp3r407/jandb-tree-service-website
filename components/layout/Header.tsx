@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { NAV, SITE } from "@/lib/site-config";
 import { cn } from "@/lib/cn";
-import { SiteBrandMark } from "@/components/layout/SiteBrandMark";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { Button } from "@/components/ui/Button";
 
 function isActive(pathname: string, href: string) {
@@ -51,7 +51,7 @@ export function Header() {
           className="group flex shrink-0 items-center"
           aria-label={`${SITE.name} home`}
         >
-          <SiteBrandMark variant="header" />
+          <BrandLogo variant="header" priority />
         </Link>
 
         <nav

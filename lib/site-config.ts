@@ -23,15 +23,8 @@ export const SITE = {
   bbbUrl:
     "https://www.bbb.org/central-florida/business-reviews/tree-service/jandbs-tree-service-in-debary-fl-153251111",
   youtubeIds: ["fDpqn9J7NLc", "F7PWfC6Xxgs"],
-  /** Raster logo under `public/images/` for JSON-LD / social previews (optional file). */
-  logoImagePath: "/images/logo.png",
-  /** Short labels for the text brand ribbon (legacy signage). */
-  brandRibbonAreas: [
-    "Central Florida",
-    "Volusia",
-    "Seminole",
-    "Orange",
-  ],
+  /** Raster logo URL — must match `public/images/logo.png`. */
+  logoSrc: "/images/logo.png" as const,
   businessHours: [
     { label: "Mon–Sat", value: "7:00 AM – 6:00 PM" },
     { label: "Sunday", value: "Emergency calls only" },

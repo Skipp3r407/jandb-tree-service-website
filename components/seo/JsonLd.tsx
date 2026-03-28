@@ -1,4 +1,9 @@
-import { DEFAULT_SITE_URL, SITE, siteAbsoluteUrl } from "@/lib/site-config";
+import {
+  DEFAULT_SITE_URL,
+  SITE,
+  legacyImage,
+  siteAbsoluteUrl,
+} from "@/lib/site-config";
 
 export function JsonLd() {
   const schema = {
@@ -11,7 +16,7 @@ export function JsonLd() {
     url: DEFAULT_SITE_URL,
     telephone: SITE.phoneTel,
     email: SITE.email,
-    image: siteAbsoluteUrl(SITE.logoImagePath),
+    image: siteAbsoluteUrl(legacyImage("logo.png")),
     address: {
       "@type": "PostalAddress",
       addressLocality: SITE.hqCity,

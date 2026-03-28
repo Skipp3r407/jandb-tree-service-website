@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { SiteBrandMark } from "@/components/layout/SiteBrandMark";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { NAV, SITE } from "@/lib/site-config";
 
 export function Footer() {
@@ -15,7 +15,7 @@ export function Footer() {
               className="inline-block"
               aria-label={`${SITE.name} home`}
             >
-              <SiteBrandMark variant="footer" />
+              <BrandLogo variant="footer" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               {SITE.description}
