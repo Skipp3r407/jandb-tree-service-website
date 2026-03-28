@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { NAV, SITE } from "@/lib/site-config";
 import { cn } from "@/lib/cn";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { Button } from "@/components/ui/Button";
 
 function isActive(pathname: string, href: string) {
@@ -51,14 +51,7 @@ export function Header() {
           className="group flex shrink-0 items-center"
           aria-label={`${SITE.name} home`}
         >
-          <Image
-            src={SITE.logoSrc}
-            alt={SITE.name}
-            width={220}
-            height={52}
-            priority
-            className="h-9 w-auto max-h-11 max-w-[min(70vw,240px)] object-contain object-left sm:h-11"
-          />
+          <BrandLogo priority />
         </Link>
 
         <nav

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, TreePine } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { NAV, SITE } from "@/lib/site-config";
 
 export function Footer() {
@@ -9,12 +10,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-12 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10">
-                <TreePine className="h-6 w-6" />
-              </span>
-              <span className="font-display text-lg font-bold">{SITE.name}</span>
-            </div>
+            <Link
+              href="/"
+              className="inline-block"
+              aria-label={`${SITE.name} home`}
+            >
+              <BrandLogo />
+            </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               {SITE.description}
             </p>
