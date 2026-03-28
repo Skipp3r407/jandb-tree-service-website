@@ -1,3 +1,7 @@
+/**
+ * App Router root layout — required for Next.js App Router (`app/` directory).
+ * Do not move to `pages/`; paired with `app/page.tsx` for the `/` route.
+ */
 import type { Metadata } from "next";
 import { DM_Sans, Outfit } from "next/font/google";
 import "./globals.css";

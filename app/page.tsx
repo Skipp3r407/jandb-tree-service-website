@@ -22,7 +22,11 @@ import {
 } from "@/lib/site-config";
 import Image from "next/image";
 
-export default function HomePage() {
+/**
+ * App Router root route: MUST live at `app/page.tsx` so `/` resolves (not 404 on Vercel).
+ * Shell (html/body, header, footer) is in `app/layout.tsx`.
+ */
+export default function Home() {
   return (
     <>
       <Hero />
