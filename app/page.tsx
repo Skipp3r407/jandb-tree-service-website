@@ -14,13 +14,8 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { GalleryGrid } from "@/components/sections/GalleryGrid";
 import { VideoEmbed } from "@/components/sections/VideoEmbed";
 import { Button } from "@/components/ui/Button";
-import {
-  HOME_SERVICES,
-  SITE,
-  TESTIMONIALS,
-  legacyImage,
-} from "@/lib/site-config";
-import Image from "next/image";
+import { HOME_SERVICES, SITE, TESTIMONIALS } from "@/lib/site-config";
+import { SiteBrandMark } from "@/components/layout/SiteBrandMark";
 
 /**
  * App Router root route: MUST live at `app/page.tsx` so `/` resolves (not 404 on Vercel).
@@ -219,14 +214,8 @@ export default function Home() {
                   </span>
                 </li>
               </ul>
-              <div className="relative mt-8 aspect-[21/9] overflow-hidden rounded-2xl border border-brand-border bg-black/5">
-                <Image
-                  src={legacyImage("jbhead.jpg")}
-                  alt="J&B's Tree Service — Central Florida"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width:1024px) 100vw, 50vw"
-                />
+              <div className="mt-8 rounded-2xl border border-brand-border bg-brand-forest/[0.04] px-5 py-8 sm:px-8 sm:py-10">
+                <SiteBrandMark variant="contact" />
               </div>
               <p className="mt-4 text-sm text-brand-muted">
                 We&apos;ll respond within 24 hours on estimate requests. For

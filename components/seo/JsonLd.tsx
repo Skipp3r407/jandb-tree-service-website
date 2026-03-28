@@ -11,7 +11,7 @@ export function JsonLd() {
     url: DEFAULT_SITE_URL,
     telephone: SITE.phoneTel,
     email: SITE.email,
-    image: siteAbsoluteUrl("/images/jbhead.jpg"),
+    image: siteAbsoluteUrl(SITE.logoImagePath),
     address: {
       "@type": "PostalAddress",
       addressLocality: SITE.hqCity,

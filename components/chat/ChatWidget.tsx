@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { MessageCircle, Phone, Send, X } from "lucide-react";
+import { Phone, Send, TreePine, X } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import { cn } from "@/lib/cn";
 
@@ -88,18 +88,22 @@ export function ChatWidget() {
         type="button"
         onClick={() => setOpen((o) => !o)}
         className={cn(
-          "fixed bottom-20 left-4 z-[45] flex h-14 w-14 items-center justify-center rounded-full bg-brand-forest text-white shadow-[var(--shadow-soft)] transition hover:bg-brand-forest-mid md:bottom-8 md:left-8",
+          "fixed bottom-20 right-4 z-[45] flex h-14 w-14 items-center justify-center rounded-full bg-brand-forest text-white shadow-[var(--shadow-soft)] transition hover:bg-brand-forest-mid md:bottom-8 md:right-8",
           open && "ring-2 ring-brand-accent ring-offset-2",
         )}
         aria-expanded={open}
-        aria-label={open ? "Close chat" : "Open chat"}
+        aria-label={open ? "Close chat" : "Open tree service chat"}
       >
-        {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-7 w-7" />}
+        {open ? (
+          <X className="h-6 w-6" aria-hidden />
+        ) : (
+          <TreePine className="h-7 w-7" strokeWidth={2.25} aria-hidden />
+        )}
       </button>
 
       {open ? (
         <div
-          className="fixed bottom-36 left-4 z-[45] flex w-[min(100vw-2rem,22rem)] flex-col overflow-hidden rounded-2xl border border-brand-border bg-white shadow-[var(--shadow-soft)] md:bottom-24 md:left-8 md:w-[24rem]"
+          className="fixed bottom-36 right-4 z-[45] flex w-[min(100vw-2rem,22rem)] flex-col overflow-hidden rounded-2xl border border-brand-border bg-white shadow-[var(--shadow-soft)] md:bottom-24 md:right-8 md:w-[24rem]"
           role="dialog"
           aria-label="Chat assistant"
         >

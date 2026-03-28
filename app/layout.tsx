@@ -8,7 +8,6 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileCall } from "@/components/layout/StickyMobileCall";
-import { FloatingEstimate } from "@/components/layout/FloatingEstimate";
 import { InitialLoader } from "@/components/layout/InitialLoader";
 import { ChatWidget } from "@/components/chat/ChatWidget";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -55,7 +54,6 @@ export default function RootLayout({
         <main className="flex-1 pb-[5.5rem] md:pb-0">{children}</main>
         <Footer />
         <StickyMobileCall />
-        <FloatingEstimate />
         <ChatWidget />
       </body>
     </html>

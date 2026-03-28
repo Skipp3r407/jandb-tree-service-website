@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { BrandLogo } from "@/components/layout/BrandLogo";
+import { SiteBrandMark } from "@/components/layout/SiteBrandMark";
 import { NAV, SITE } from "@/lib/site-config";
 
 export function Footer() {
@@ -15,7 +15,7 @@ export function Footer() {
               className="inline-block"
               aria-label={`${SITE.name} home`}
             >
-              <BrandLogo />
+              <SiteBrandMark variant="footer" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               {SITE.description}
@@ -97,11 +97,13 @@ export function Footer() {
             <h3 className="font-display text-sm font-bold uppercase tracking-widest text-white/50">
               Hours
             </h3>
-            <ul className="mt-4 space-y-2 text-sm text-white/75">
+            <ul className="mt-4 grid grid-cols-[max-content_1fr] gap-x-6 gap-y-3 text-sm text-white/75">
               {SITE.businessHours.map((h) => (
-                <li key={h.label} className="flex justify-between gap-4">
-                  <span className="text-white/55">{h.label}</span>
-                  <span className="font-medium text-white/90">{h.value}</span>
+                <li key={h.label} className="contents">
+                  <span className="shrink-0 text-white/55">{h.label}</span>
+                  <span className="min-w-0 font-medium leading-snug text-white/90">
+                    {h.value}
+                  </span>
                 </li>
               ))}
             </ul>

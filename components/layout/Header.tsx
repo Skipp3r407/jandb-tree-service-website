@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { NAV, SITE } from "@/lib/site-config";
 import { cn } from "@/lib/cn";
-import { BrandLogo } from "@/components/layout/BrandLogo";
+import { SiteBrandMark } from "@/components/layout/SiteBrandMark";
 import { Button } from "@/components/ui/Button";
 
 function isActive(pathname: string, href: string) {
@@ -45,13 +45,13 @@ export function Header() {
           : "bg-white/90 backdrop-blur-sm",
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-5 lg:px-8">
         <Link
           href="/"
           className="group flex shrink-0 items-center"
           aria-label={`${SITE.name} home`}
         >
-          <BrandLogo priority />
+          <SiteBrandMark variant="header" />
         </Link>
 
         <nav
