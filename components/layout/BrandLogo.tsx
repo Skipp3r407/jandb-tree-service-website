@@ -23,11 +23,11 @@ export function BrandLogo({
       priority={priority}
       className={cn(
         variant === "header" &&
-          "h-[7.65rem] w-auto max-h-[9.35rem] max-w-[min(85vw,816px)] object-contain object-left sm:h-[9.35rem] max-md:origin-left max-md:scale-[0.62]",
+          "h-[3.825rem] w-auto max-h-[4.675rem] max-w-[min(85vw,408px)] object-contain object-left sm:h-[4.675rem]",
         variant === "footer" &&
-          "h-[7.65rem] w-auto max-h-[9.35rem] max-w-[min(92vw,816px)] object-contain object-left sm:h-[9.35rem]",
+          "h-[1.9125rem] w-auto max-h-[2.3375rem] max-w-[min(92vw,204px)] object-contain object-left sm:h-[2.3375rem]",
         variant === "contact" &&
-          "mx-auto h-auto max-h-52 w-full max-w-lg object-contain object-center sm:max-h-64",
+          "mx-auto h-auto max-h-[6.5rem] w-full max-w-[16rem] object-contain object-center sm:max-h-[8rem]",
         className,
       )}
     />
