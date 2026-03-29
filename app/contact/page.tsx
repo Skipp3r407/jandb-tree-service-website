@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Phone, Mail, MapPin, Clock, AlertTriangle } from "lucide-react";
 import { MotionSection } from "@/components/sections/MotionSection";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { ContactAreaMap } from "@/components/sections/ContactAreaMap";
 import { SITE } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -103,17 +104,12 @@ export default function ContactPage() {
               ))}
             </ul>
 
-            <div className="mt-10 aspect-video overflow-hidden rounded-2xl border border-brand-border bg-black/5">
-              <iframe
-                title="Service area map placeholder"
-                src="https://maps.google.com/maps?q=DeBary%20FL&t=&z=10&ie=UTF8&iwloc=&output=embed"
-                className="h-full w-full"
-                loading="lazy"
-              />
+            <div className="mt-10">
+              <ContactAreaMap />
             </div>
             <p className="mt-3 text-xs text-brand-muted">
-              Map is approximate—replace with your verified business location or
-              service polygon.
+              Map shows our service region—paste your embed URL in site config
+              for an exact listing pin.
             </p>
           </MotionSection>
 

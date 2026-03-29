@@ -15,7 +15,7 @@ import { GalleryGrid } from "@/components/sections/GalleryGrid";
 import { VideoEmbed } from "@/components/sections/VideoEmbed";
 import { Button } from "@/components/ui/Button";
 import { HOME_SERVICES, SITE, TESTIMONIALS } from "@/lib/site-config";
-import { BrandLogo } from "@/components/layout/BrandLogo";
+import { ContactAreaMap } from "@/components/sections/ContactAreaMap";
 
 /**
  * App Router root route: MUST live at `app/page.tsx` so `/` resolves (not 404 on Vercel).
@@ -214,8 +214,8 @@ export default function Home() {
                   </span>
                 </li>
               </ul>
-              <div className="mt-8 rounded-2xl border border-brand-border bg-brand-forest/[0.04] px-5 py-8 sm:px-8 sm:py-10">
-                <BrandLogo variant="contact" />
+              <div className="mt-8">
+                <ContactAreaMap variant="tall" />
               </div>
               <p className="mt-4 text-sm text-brand-muted">
                 We&apos;ll respond within 24 hours on estimate requests. For

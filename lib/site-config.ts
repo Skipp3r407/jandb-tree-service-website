@@ -36,6 +36,11 @@ export const SITE = {
   googleReviewWriteUrl: "",
   /** Optional: public Google Maps URL to your listing (“View on Google”). */
   googleMapsListingUrl: "",
+  /**
+   * Google Maps embed `src` for contact/home map (Share → Embed a map → copy iframe src).
+   * Leave empty to use the default DeBary / Central Florida regional embed.
+   */
+  contactMapEmbedSrc: "",
   businessHours: [
     { label: "Mon–Sat", value: "7:00 AM – 6:00 PM" },
     { label: "Sunday", value: "Emergency calls only" },
