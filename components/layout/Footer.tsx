@@ -12,7 +12,7 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="inline-block rounded-xl bg-white p-3 shadow-md ring-1 ring-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent sm:p-4"
+              className="inline-block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
               aria-label={`${SITE.name} home`}
             >
               <BrandLogo variant="footer" />
