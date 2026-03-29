@@ -23,7 +23,10 @@ export const SITE = {
   bbbUrl:
     "https://www.bbb.org/central-florida/business-reviews/tree-service/jandbs-tree-service-in-debary-fl-153251111",
   youtubeIds: ["fDpqn9J7NLc", "F7PWfC6Xxgs"],
-  /** Raster logo URL — must match `public/images/logo.png`. */
+  /**
+   * Brand logo URL. The file lives at `public/images/logo.png` and is maintained by you—swap that file when the artwork changes.
+   * (Do not replace it with placeholder or generated images in tooling.)
+   */
   logoSrc: "/images/logo.png" as const,
   businessHours: [
     { label: "Mon–Sat", value: "7:00 AM – 6:00 PM" },

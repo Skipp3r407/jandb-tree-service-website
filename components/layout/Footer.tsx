@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { BrandLogo } from "@/components/layout/BrandLogo";
+import { SocialMediaIcons } from "@/components/layout/SocialMediaIcons";
 import { NAV, SITE } from "@/lib/site-config";
 
 export function Footer() {
@@ -10,12 +10,12 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-12 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
+            <SocialMediaIcons variant="footer" />
             <Link
               href="/"
-              className="inline-block"
-              aria-label={`${SITE.name} home`}
+              className="mt-5 inline-block font-display text-lg font-bold text-white hover:underline"
             >
-              <BrandLogo variant="footer" />
+              {SITE.name}
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               {SITE.description}
@@ -107,14 +107,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <a
-              href={SITE.facebookUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-block text-sm font-semibold text-brand-accent hover:underline"
-            >
-              Follow us on Facebook →
-            </a>
           </div>
         </div>
         <div className="mt-12 border-t border-white/10 pt-8 text-center text-xs text-white/45">
