@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { NAV, SITE } from "@/lib/site-config";
 import { cn } from "@/lib/cn";
-import { SocialMediaIcons } from "@/components/layout/SocialMediaIcons";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { Button } from "@/components/ui/Button";
 
 function isActive(pathname: string, href: string) {
@@ -46,9 +46,13 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-5 lg:px-8">
-        <div className="flex shrink-0 items-center">
-          <SocialMediaIcons variant="header" />
-        </div>
+        <Link
+          href="/"
+          className="group flex shrink-0 items-center"
+          aria-label={`${SITE.name} home`}
+        >
+          <BrandLogo variant="header" priority />
+        </Link>
 
         <nav
           className="hidden items-center gap-1 lg:flex"

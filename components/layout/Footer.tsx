@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { SocialMediaIcons } from "@/components/layout/SocialMediaIcons";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { NAV, SITE } from "@/lib/site-config";
 
 export function Footer() {
@@ -10,12 +10,12 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-12 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <SocialMediaIcons variant="footer" />
             <Link
               href="/"
-              className="mt-5 inline-block font-display text-lg font-bold text-white hover:underline"
+              className="inline-block rounded-xl bg-white p-3 shadow-md ring-1 ring-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent sm:p-4"
+              aria-label={`${SITE.name} home`}
             >
-              {SITE.name}
+              <BrandLogo variant="footer" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               {SITE.description}
