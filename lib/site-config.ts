@@ -28,6 +28,14 @@ export const SITE = {
    * (Do not replace it with placeholder or generated images in tooling.)
    */
   logoSrc: "/images/logo.png" as const,
+  /**
+   * Opens Google’s review form for your Business Profile. Get it from Google Business Profile
+   * → “Ask for reviews” / share review link. Example shape:
+   * `https://search.google.com/local/writereview?placeid=ChIJ...`
+   */
+  googleReviewWriteUrl: "",
+  /** Optional: public Google Maps URL to your listing (“View on Google”). */
+  googleMapsListingUrl: "",
   businessHours: [
     { label: "Mon–Sat", value: "7:00 AM – 6:00 PM" },
     { label: "Sunday", value: "Emergency calls only" },

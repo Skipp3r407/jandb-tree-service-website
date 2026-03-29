@@ -10,7 +10,7 @@ export function BrandLogo({
   priority = false,
   className,
 }: {
-  variant: "header" | "footer" | "contact";
+  variant: "header" | "footer" | "contact" | "splash";
   priority?: boolean;
   className?: string;
 }) {
@@ -28,6 +28,8 @@ export function BrandLogo({
           "h-[2.10375rem] w-auto max-h-[2.57125rem] max-w-[min(92vw,224px)] object-contain object-left sm:h-[2.57125rem]",
         variant === "contact" &&
           "mx-auto h-auto max-h-[6.5rem] w-full max-w-[16rem] object-contain object-center sm:max-h-[8rem]",
+        variant === "splash" &&
+          "mx-auto h-auto max-h-[5.5rem] w-full max-w-[min(90vw,20rem)] object-contain object-center sm:max-h-[6.5rem] sm:max-w-[22rem]",
         className,
       )}
     />

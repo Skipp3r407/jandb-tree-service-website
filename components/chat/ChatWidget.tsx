@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Phone, Send, TreePine, X } from "lucide-react";
+import { ChevronUp, Phone, Send, TreePine, X } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import { cn } from "@/lib/cn";
 
@@ -43,8 +43,12 @@ function botReply(text: string): string {
   return `Thanks for the message. For specifics about your property, call ${SITE.phoneDisplay} or send photos through the contact form.`;
 }
 
+const SCROLL_SHOW_AFTER = 360;
+const NEAR_BOTTOM_PX = 160;
+
 export function ChatWidget() {
   const [open, setOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Msg[]>(() => [
     {
@@ -58,6 +62,26 @@ export function ChatWidget() {
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, open]);
+
+  useEffect(() => {
+    const update = () => {
+      const root = document.documentElement;
+      const { scrollTop, scrollHeight, clientHeight } = root;
+      const fromBottom = scrollHeight - scrollTop - clientHeight;
+      const tallEnough = scrollHeight > clientHeight + 100;
+      setShowScrollTop(
+        tallEnough &&
+          (scrollTop > SCROLL_SHOW_AFTER || fromBottom < NEAR_BOTTOM_PX),
+      );
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
 
   const pushExchange = useCallback((userText: string) => {
     const trimmed = userText.trim();
@@ -82,8 +106,28 @@ export function ChatWidget() {
     setInput("");
   }, [input, pushExchange]);
 
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <>
+      <button
+        type="button"
+        onClick={scrollToTop}
+        className={cn(
+          "fixed bottom-[9.125rem] right-4 z-[45] flex h-12 w-12 items-center justify-center rounded-full border border-brand-border bg-white text-brand-forest shadow-[var(--shadow-soft)] transition hover:bg-brand-forest/5 md:bottom-[6.125rem] md:right-8",
+          !open && showScrollTop
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-2 opacity-0",
+        )}
+        aria-hidden={open || !showScrollTop}
+        aria-label="Back to top"
+        tabIndex={open || !showScrollTop ? -1 : 0}
+      >
+        <ChevronUp className="h-6 w-6" strokeWidth={2.5} aria-hidden />
+      </button>
+
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
