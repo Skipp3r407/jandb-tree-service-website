@@ -23,9 +23,9 @@ export function BrandLogo({
       priority={priority}
       className={cn(
         variant === "header" &&
-          "h-[3.825rem] w-auto max-h-[4.675rem] max-w-[min(85vw,408px)] object-contain object-left sm:h-[4.675rem]",
+          "h-[4.01625rem] w-auto max-h-[4.90875rem] max-w-[min(85vw,428px)] object-contain object-left sm:h-[4.90875rem]",
         variant === "footer" &&
-          "h-[1.9125rem] w-auto max-h-[2.3375rem] max-w-[min(92vw,204px)] object-contain object-left sm:h-[2.3375rem]",
+          "h-[2.10375rem] w-auto max-h-[2.57125rem] max-w-[min(92vw,224px)] object-contain object-left sm:h-[2.57125rem]",
         variant === "contact" &&
           "mx-auto h-auto max-h-[6.5rem] w-full max-w-[16rem] object-contain object-center sm:max-h-[8rem]",
         className,

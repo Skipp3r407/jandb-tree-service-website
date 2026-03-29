@@ -32,6 +32,11 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
+  icons: {
+    icon: [{ url: SITE.logoSrc, type: "image/png" }],
+    apple: [{ url: SITE.logoSrc }],
+    shortcut: SITE.logoSrc,
+  },
   openGraph: {
     title: `${SITE.name} — Professional Tree Service in Central Florida`,
     description: SITE.description,
